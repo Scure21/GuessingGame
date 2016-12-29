@@ -4,57 +4,56 @@
     <title>Guessing Game</title>
 
     <!-- Bootstrap and CSS here-->
-    <link rel="stylsheet" type="text/css" href="styles.css"/>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css"
 
   </head>
+
   <body>
 
-      <div id='app'>
+      <div id='app' class='center container'>
 
         <div id='headers'>
            <h1 id="title">Guessing Game</h1>
-           <h2 id="subtitle">Guess a number between 1 and 100</h2>
+           <h2 id="subtitle">Guess a number between 1 and 100!</h2>
         </div>
 
         <div id='main'>
           <div id='input-parent'>
-            <!-- Player's guess input, and submit button -->
-            <input placeholder=# maxlength="3" autofocus="autofocus"></input>
-            <button type="button">Go!</button>
+            <input id='player-input' class="center" placeholder=# maxlength="3" autofocus="autofocus"></input>
+            <button id='submit' type="button" class="btn btn-success">Go!</button>
           </div>
 
           <div id='guesses'>
-            <!-- unordered list of guesses -->
             <ul id="attempts"> 
-              <li>-</li>
-              <li>-</li>
-              <li>-</li>
-              <li>-</li>
+              <li class='guess'>-</li>
+              <li class='guess'>-</li>
+              <li class='guess'>-</li>
+              <li class='guess'>-</li>
             </ul>
           </div>
 
           <div id="menu-btns">
-            <!-- reset and hint buttons -->
-            <button type="button">Reset</button>
-            <button type="button">Hint</button>
+            <button type="button" id="reset" class="btn btn-warning">Reset</button>
+            <button type="button" id="hint" class="btn btn-info">Hint</button>
           </div>
         </div>
       </div>
 
 
 
-    <div id='footer'>
-        <div>
-          <div class=''>
-            <img src='fa-logo@2x.png'></img>
+    <div id='footer' class="center">
+        <div class="row">
+          <div class='col-sm-4'>
+            <img class="img-responsive" src='img/fa-logo@2x.png'></img>
           </div>
 
-          <div class=''>
+          <div class='col-sm-4'>
             <h4>Project by Stephanie Cure</h4>
           </div>
 
-          <div class=''>
-            <img src='grace_hopper_academy.png'></img>
+          <div class='col-sm-4'>
+            <img class="img-responsive" src='img/grace_hopper_academy.png'></img>
           </div>
 
 
