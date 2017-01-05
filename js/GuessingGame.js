@@ -35,12 +35,13 @@ Game.prototype.isLower = function(){
     return this.playersGuess < this.winningNumber;
 }
 Game.prototype.playersGuessSubmission = function(num){
-    if(typeof num != 'number' || num <1 || num > 100){throw "That is an invalid guess."}
+    if(typeof(num) != 'number' || num <1 || num > 100 || isNaN(num)){
+        throw "That is an invalid guess."
+    }
     this.playersGuess = num;
-    return Game.prototype.checkGuess.call(this);
+    return this.checkGuess();
 }
-Game.prototype.checkGuess = function(guess){
-    var guess = 0;
+Game.prototype.checkGuess = function(){
         if(this.pastGuesses.includes(this.playersGuess)){
             return "You have already guessed that number.";
         }
@@ -75,11 +76,11 @@ Game.prototype.provideHint = function(){
 }
 
 //event handler
-function makeAGuess(newGame){
-    var guess = $("#player-input").val();
-    $("#player-input").val("");
+function makeAGuess(newGame) {
+    var guess = $('#player-input').val();
+    $('#player-input').val("");
     var output = newGame.playersGuessSubmission(parseInt(guess,10));
-    $("#title").text(output);
+    $('#title').text(output);
 }
 $("document").ready(function(){
     var newGame = new Game();
@@ -98,11 +99,11 @@ $("document").ready(function(){
         $('#title').text('The winning number may be one of these: '+hints[0]+', '+hints[1]+', '+hints[2]);
     });
      $('#reset').click(function() {
-        
+        newGame = newGame();
         $('#title').text('Play the Guessing Game!');
         $('#subtitle').text('Guess a number between 1-100!')
         $('.guess').text('-');
         $('#hint, #submit').prop("disabled",false);
-        newGame = new Game();
+        //newGame = new Game();
     })
 });
