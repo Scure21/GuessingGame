@@ -99,11 +99,10 @@ $("document").ready(function(){
         $('#title').text('The winning number may be one of these: '+hints[0]+', '+hints[1]+', '+hints[2]);
     });
      $('#reset').click(function() {
-        newGame = newGame();
         $('#title').text('Play the Guessing Game!');
         $('#subtitle').text('Guess a number between 1-100!')
         $('.guess').text('-');
         $('#hint, #submit').prop("disabled",false);
-        //newGame = new Game();
+        newGame = new Game();
     })
 });
