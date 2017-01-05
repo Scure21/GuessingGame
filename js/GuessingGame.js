@@ -95,7 +95,7 @@ $("document").ready(function(){
     });
     $('#hint').click(function(){
         var hints = newGame.provideHint();
-        $('#title').text('The winning number my be one of these: '+hints[0]+', '+hints[1]+', '+hints[2]);
+        $('#title').text('The winning number may be one of these: '+hints[0]+', '+hints[1]+', '+hints[2]);
     });
      $('#reset').click(function() {
         
